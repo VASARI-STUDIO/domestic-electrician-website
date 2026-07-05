@@ -81,7 +81,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div className="border-t border-white/10 pt-8 flex flex-col lg:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} Spark Electrical. All rights reserved.</p>
           <p className="flex items-center gap-1.5 text-gray-400">
             Designed &amp; Built by{' '}

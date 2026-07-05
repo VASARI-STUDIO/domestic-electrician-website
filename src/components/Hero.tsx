@@ -27,12 +27,19 @@ export function Hero() {
               Premium electrical services for your home. From simple repairs to smart home upgrades, we get it done safely and cleanly.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 w-full sm:w-auto mt-2 lg:mt-0">
-              <Link to="/contact" className="group bg-primary hover:bg-primary-dark text-dark font-bold text-base lg:text-lg py-3 lg:py-4 px-6 lg:px-8 rounded-full flex items-center justify-center gap-2 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl shadow-lg w-full sm:w-auto">
+            {/*
+              Direction toggles twice: the Hero splits into two columns at lg
+              (1024px), which nearly halves this row's available width, so the
+              buttons would wrap mid-text if they stayed side-by-side. Stack
+              them again at lg and only go side-by-side once xl (1280px)
+              gives the column enough room.
+            */}
+            <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 lg:gap-4 w-full sm:w-auto lg:w-full xl:w-auto mt-2 lg:mt-0">
+              <Link to="/contact" className="group bg-primary hover:bg-primary-dark text-dark font-bold text-base lg:text-lg py-3 lg:py-4 px-6 lg:px-8 rounded-full flex items-center justify-center gap-2 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl shadow-lg w-full sm:w-auto lg:w-full xl:w-auto">
                 Get a Free Quote
                 <ArrowRight size={20} className="w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 ease-out group-hover:translate-x-1" />
               </Link>
-              <a href="tel:0400000000" className="bg-white hover:bg-gray-50 text-dark border-2 border-gray-200 font-bold text-base lg:text-lg py-3 lg:py-4 px-6 lg:px-8 rounded-full flex items-center justify-center gap-2 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto">
+              <a href="tel:0400000000" className="bg-white hover:bg-gray-50 text-dark border-2 border-gray-200 font-bold text-base lg:text-lg py-3 lg:py-4 px-6 lg:px-8 rounded-full flex items-center justify-center gap-2 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto lg:w-full xl:w-auto">
                 <Phone size={20} className="text-primary w-5 h-5 lg:w-6 lg:h-6" />
                 Call 0400 000 000
               </a>
