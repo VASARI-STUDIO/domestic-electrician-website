@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #F5B041;
+  --color-primary-dark: #D68910;
+  --color-primary-light: #F8C471;
+
+  --color-dark: #111111;
+  --color-dark-lighter: #222222;
+
+  --color-light: #FAFAFA;
+  --color-light-darker: #F0F0F0;
+
+  --font-sans: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply text-dark bg-light font-sans antialiased;
+  }
+}
+
+/* Respect users who prefer reduced motion: neutralise CSS animations,
+   transitions and smooth scrolling. Framer Motion loops are gated
+   separately via useReducedMotion(). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
